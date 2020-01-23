@@ -20,7 +20,7 @@ samps <- 1000 # number of samples to do the calculation on
 mean_disp_cts_vec <- rep(NA, samps)
 mean_disp_binned_vec  <- rep(NA, samps)
 
-#' ### Turn this into a loop and output distributions of each
+#' #### Turn this into a loop and output distributions of each
 
 for (s in 1:samps){
   #' distances drawn from a normal 
@@ -70,4 +70,3 @@ ggplot(data = disp_df, mapping = aes(x = mean_disp_cts_vec, y = mean_disp_binned
   geom_point() + 
   geom_smooth(method='lm')
 
-#knitr::spin("/Users/Courtney/Documents/Thesis Chapter 1/Field Study/2019 Full Study Files/Simulating Dispersion Measurements from Binned Data.R")
