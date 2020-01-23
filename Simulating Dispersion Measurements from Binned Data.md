@@ -32,7 +32,7 @@ mean_disp_cts_vec <- rep(NA, samps)
 mean_disp_binned_vec  <- rep(NA, samps)
 ```
 
-### Turn this into a loop and output distributions of each
+#### Turn this into a loop and output distributions of each
 
 
 ```r
@@ -88,18 +88,18 @@ summary(lm(mean_disp_binned_vec~mean_disp_cts_vec))
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -1.39193 -0.33867 -0.05017  0.31027  2.02404 
+## -1.42599 -0.36010 -0.04801  0.30456  2.06801 
 ## 
 ## Coefficients:
 ##                   Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)        1.70941    0.08877   19.26   <2e-16 ***
-## mean_disp_cts_vec  0.48876    0.03033   16.11   <2e-16 ***
+## (Intercept)        1.54532    0.09422    16.4   <2e-16 ***
+## mean_disp_cts_vec  0.54600    0.03212    17.0   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.5056 on 998 degrees of freedom
-## Multiple R-squared:  0.2065,	Adjusted R-squared:  0.2057 
-## F-statistic: 259.7 on 1 and 998 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.5207 on 998 degrees of freedom
+## Multiple R-squared:  0.2245,	Adjusted R-squared:  0.2237 
+## F-statistic: 288.9 on 1 and 998 DF,  p-value: < 2.2e-16
 ```
 
 Correlation between binned and cts average dispersion vectors
@@ -110,14 +110,14 @@ cor(mean_disp_binned_vec,mean_disp_cts_vec)
 ```
 
 ```
-## [1] 0.4544135
+## [1] 0.4737952
 ```
 
 Plot the relationship between average binned and cts dispersion values
 
 
 ```r
-disp_df <- data.frame(mean_disp_binned_vec,mean_disp_cts_vec)
+disp_df <- data.frame(mean_disp_binned_vec, mean_disp_cts_vec)
 
 ggplot(data = disp_df, mapping = aes(x = mean_disp_cts_vec, y = mean_disp_binned_vec)) +
   geom_point() + 
@@ -125,8 +125,4 @@ ggplot(data = disp_df, mapping = aes(x = mean_disp_cts_vec, y = mean_disp_binned
 ```
 
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
-
-```r
-#knitr::spin("/Users/Courtney/Documents/Thesis Chapter 1/Field Study/2019 Full Study Files/)
-```
 
